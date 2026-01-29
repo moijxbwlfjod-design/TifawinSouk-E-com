@@ -29,7 +29,19 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|max:20',
+            'reference' => 'required|max:20',
+            'slug' => 'required|max:30',
+            'price' => 'required|numeric|min:0',
+            'stock' => 'required|integer|min:0',
+            'categorie_id' => 'required|exists:categories,id',
+        ]);
+        if($request->hasFile('image')){
+            $validated['image_path'] = $request->file('image')->store('products', 'public');
+        }
+        Product::create($validated);
+        return redirect()->route('products.index');
     }
 
     /**

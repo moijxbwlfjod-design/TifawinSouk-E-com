@@ -9,17 +9,17 @@
     <main>
         <form action="{{route('products.store')}}" method="post">
             <label for="name">Product Name:</label><br>
-            <input type="text" id="name"><br><br>
+            <input required type="text" id="name"><br><br>
             <label for="reference">Reference:</label><br>
-            <input type="text" id="reference"><br><br>
+            <input required type="text" id="reference"><br><br>
             <label for="slug">Slug:</label><br>
-            <input type="text" id="slug"><br><br>
+            <input required type="text" id="slug"><br><br>
             <label for="price">price:</label><br>
-            <input type="number" id="price"><br><br>
+            <input required type="number" id="price"><br><br>
             <label for="stock">stock:</label><br>
-            <input type="number" id="stock"><br><br>
+            <input required type="number" id="stock"><br><br>
             <label for="categorie_id">categorie_id:</label><br>
-            <input type="text" id="categorie_id"><br><br>
+            <input required type="text" id="categorie_id"><br><br>
             <label for="image_path">Image Path:</label><br>
             <input type="text" id="image_path"><br><br>
             <button type="submit">Add Product</button>
