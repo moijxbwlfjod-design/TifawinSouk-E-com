@@ -8,6 +8,7 @@
 <body>
     <main>
         <form action="{{route('products.store')}}" method="post">
+            @csrf
             <label for="name">Product Name:</label><br>
             <input required type="text" id="name"><br><br>
             <label for="reference">Reference:</label><br>
